@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Bliss • Final</title>
+<title>Pizza Bliss • Final Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -29,10 +29,12 @@ body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--text);}
 nav{display:flex;justify-content:space-between;padding:15px 30px;background:#111}
 nav h1{color:var(--accent)}
 
-button{cursor:pointer}
-.toggle-btn{background:var(--accent);color:white;border:none;padding:8px 15px;border-radius:20px}
+.toggle-btn{background:var(--accent);color:white;border:none;padding:8px 15px;border-radius:20px;cursor:pointer}
 
-.hero{height:80vh;background:url('https://picsum.photos/1600/900?food,pizza') center/cover;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{
+height:80vh;
+background:url('https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+display:flex;align-items:center;justify-content:center;text-align:center}
 .hero h2{font-size:3rem}
 
 .section{padding:40px}
@@ -48,7 +50,7 @@ button{cursor:pointer}
 
 .cart{position:fixed;right:-300px;top:0;width:300px;height:100%;background:#111;padding:20px;transition:.3s}
 .cart.active{right:0}
-.cart-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);padding:15px;border-radius:50%}
+.cart-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);padding:15px;border-radius:50%;cursor:pointer}
 
 footer{text-align:center;padding:20px}
 .credit{color:var(--accent)}
@@ -75,11 +77,11 @@ footer{text-align:center;padding:20px}
 
 <section class="section">
 <div class="gallery">
-<img src="https://picsum.photos/300/200?pizza1">
-<img src="https://picsum.photos/300/200?pizza2">
-<img src="https://picsum.photos/300/200?pizza3">
-<img src="https://picsum.photos/300/200?pizza4">
-<img src="https://picsum.photos/300/200?pizza5">
+<img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg">
+<img src="https://images.pexels.com/photos/4109084/pexels-photo-4109084.jpeg">
+<img src="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg">
+<img src="https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg">
+<img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg">
 </div>
 </section>
 
@@ -98,10 +100,10 @@ footer{text-align:center;padding:20px}
 
 <script>
 const pizzas=[
-{name:"Margherita",price:199,img:"https://picsum.photos/400/300?pizza"},
-{name:"Pepperoni",price:299,img:"https://picsum.photos/400/300?pepperoni"},
-{name:"Veggie",price:249,img:"https://picsum.photos/400/300?vegpizza"},
-{name:"Cheese",price:349,img:"https://picsum.photos/400/300?cheese"}
+{name:"Margherita",price:199,img:"https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg"},
+{name:"Pepperoni",price:299,img:"https://images.pexels.com/photos/4109084/pexels-photo-4109084.jpeg"},
+{name:"Veggie",price:249,img:"https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg"},
+{name:"Cheese Burst",price:349,img:"https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"}
 ];
 
 const menu=document.getElementById('menu');
@@ -109,20 +111,21 @@ const cartItems=document.getElementById('cart-items');
 let cart=[];
 
 pizzas.forEach((p,i)=>{
-menu.innerHTML+=`<div class="card"><img src="${p.img}"><div class="card-content"><h3>${p.name}</h3><p>₹${p.price}</p><button onclick="addToCart(${i})">Add</button></div></div>`;
+menu.innerHTML+=`<div class="card"><img src="${p.img}"><div class="card-content"><h3>${p.name}</h3><p>₹${p.price}</p><button class="toggle-btn" onclick="addToCart(${i})">Add</button></div></div>`;
 });
 
 function addToCart(i){cart.push(pizzas[i]);renderCart();}
 
 function renderCart(){
 cartItems.innerHTML='';let total=0;
-cart.forEach(p=>{total+=p.price;cartItems.innerHTML+=`<li>${p.name} ₹${p.price}</li>`});
+cart.forEach(p=>{total+=p.price;cartItems.innerHTML+=`<li>${p.name} - ₹${p.price}</li>`});
 document.getElementById('total').innerText='Total ₹'+total;
 }
 
 function toggleCart(){document.getElementById('cart').classList.toggle('active');}
 function toggleMode(){document.body.classList.toggle('light');}
 
+// Watson Assistant
 window.watsonAssistantChatOptions={
 integrationID:"ab98eaf7-51c7-47d8-a18e-fd527707e70c",
 region:"us-south",
