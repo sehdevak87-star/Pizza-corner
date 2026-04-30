@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Bliss • Ultimate Premium</title>
+<title>Pizza Bliss • Final</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -24,142 +24,34 @@ body.light{
 
 *{margin:0;padding:0;box-sizing:border-box}
 
-body{
-font-family:Poppins,sans-serif;
-background:var(--bg);
-color:var(--text);
-transition:.3s;
-}
+body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--text);}
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-position:sticky;
-top:0;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-z-index:100;
-}
-
+nav{display:flex;justify-content:space-between;padding:15px 30px;background:#111}
 nav h1{color:var(--accent)}
 
-.toggle-btn{
-padding:8px 15px;
-border:none;
-border-radius:20px;
-background:var(--accent);
-color:white;
-cursor:pointer;
-}
+button{cursor:pointer}
+.toggle-btn{background:var(--accent);color:white;border:none;padding:8px 15px;border-radius:20px}
 
-.hero{
-height:90vh;
-background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1600') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
+.hero{height:80vh;background:url('https://picsum.photos/1600/900?food,pizza') center/cover;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h2{font-size:3rem}
 
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
-}
+.section{padding:40px}
+.container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 
-.hero-content{position:relative;z-index:1}
-.hero h2{font-size:3.5rem}
-
-.btn{
-padding:12px 25px;
-border:none;
-border-radius:30px;
-background:var(--accent);
-color:white;
-cursor:pointer;
-margin-top:15px;
-}
-
-.section{padding:60px 20px}
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
-background:var(--card);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.6);
-transition:.4s;
-opacity:0;
-transform:translateY(40px);
-}
-
-.card.show{opacity:1;transform:translateY(0)}
+.card{background:var(--card);border-radius:15px;overflow:hidden;transition:.3s}
 .card:hover{transform:scale(1.05)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-content{padding:10px}
 
-.card img{width:100%;height:220px;object-fit:cover}
-.card-content{padding:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px}
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
-max-width:1100px;
-margin:auto;
-}
-
-.gallery img{
-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:12px;
-opacity:0;
-transform:scale(.9);
-transition:.4s;
-}
-
-.gallery img.show{opacity:1;transform:scale(1)}
-
-.cart{
-position:fixed;
-right:-320px;
-top:0;
-width:300px;
-height:100%;
-background:#111;
-padding:20px;
-transition:.4s;
-overflow-y:auto;
-z-index:200;
-}
-
+.cart{position:fixed;right:-300px;top:0;width:300px;height:100%;background:#111;padding:20px;transition:.3s}
 .cart.active{right:0}
+.cart-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);padding:15px;border-radius:50%}
 
-.cart h2{margin-bottom:10px}
-
-.cart-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:var(--accent);
-padding:15px;
-border-radius:50%;
-cursor:pointer;
-}
-
-footer{text-align:center;padding:25px;color:var(--muted)}
-.credit{color:var(--accent);font-weight:600}
-
+footer{text-align:center;padding:20px}
+.credit{color:var(--accent)}
 </style>
 </head>
 
@@ -174,10 +66,7 @@ footer{text-align:center;padding:25px;color:var(--muted)}
 </nav>
 
 <div class="hero">
-<div class="hero-content">
-<h2>Ultimate Pizza Experience</h2>
-<button class="btn">Order Now</button>
-</div>
+<h2>Delicious Pizza Delivered</h2>
 </div>
 
 <section class="section">
@@ -186,16 +75,16 @@ footer{text-align:center;padding:25px;color:var(--muted)}
 
 <section class="section">
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500">
-<img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=500">
-<img src="https://images.unsplash.com/photo-1601924582975-7e7a91d84f44?q=80&w=500">
-<img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=500">
+<img src="https://picsum.photos/300/200?pizza1">
+<img src="https://picsum.photos/300/200?pizza2">
+<img src="https://picsum.photos/300/200?pizza3">
+<img src="https://picsum.photos/300/200?pizza4">
+<img src="https://picsum.photos/300/200?pizza5">
 </div>
 </section>
 
 <div class="cart" id="cart">
-<h2>Your Cart</h2>
+<h2>Cart</h2>
 <ul id="cart-items"></ul>
 <p id="total"></p>
 </div>
@@ -209,10 +98,10 @@ footer{text-align:center;padding:25px;color:var(--muted)}
 
 <script>
 const pizzas=[
-{name:"Margherita",price:199,img:"https://images.unsplash.com/photo-1601924928353-22dc7c9f9d7a?q=80&w=800"},
-{name:"Pepperoni",price:299,img:"https://images.unsplash.com/photo-1548365328-9f547fb0953c?q=80&w=800"},
-{name:"Veggie",price:249,img:"https://images.unsplash.com/photo-1594007654729-407eedc4fe24?q=80&w=800"},
-{name:"Cheese Burst",price:349,img:"https://images.unsplash.com/photo-1603079849809-52f76d2d6d3c?q=80&w=800"}
+{name:"Margherita",price:199,img:"https://picsum.photos/400/300?pizza"},
+{name:"Pepperoni",price:299,img:"https://picsum.photos/400/300?pepperoni"},
+{name:"Veggie",price:249,img:"https://picsum.photos/400/300?vegpizza"},
+{name:"Cheese",price:349,img:"https://picsum.photos/400/300?cheese"}
 ];
 
 const menu=document.getElementById('menu');
@@ -220,37 +109,19 @@ const cartItems=document.getElementById('cart-items');
 let cart=[];
 
 pizzas.forEach((p,i)=>{
-menu.innerHTML+=`<div class="card"><img src="${p.img}"><div class="card-content"><h3>${p.name}</h3><p>₹${p.price}</p><button class="btn" onclick="addToCart(${i})">Add</button></div></div>`;
+menu.innerHTML+=`<div class="card"><img src="${p.img}"><div class="card-content"><h3>${p.name}</h3><p>₹${p.price}</p><button onclick="addToCart(${i})">Add</button></div></div>`;
 });
 
-function addToCart(i){
-cart.push(pizzas[i]);
-renderCart();
-}
+function addToCart(i){cart.push(pizzas[i]);renderCart();}
 
 function renderCart(){
-cartItems.innerHTML='';
-let total=0;
-cart.forEach(p=>{
-total+=p.price;
-cartItems.innerHTML+=`<li>${p.name} - ₹${p.price}</li>`;
-});
-document.getElementById('total').innerText='Total: ₹'+total;
+cartItems.innerHTML='';let total=0;
+cart.forEach(p=>{total+=p.price;cartItems.innerHTML+=`<li>${p.name} ₹${p.price}</li>`});
+document.getElementById('total').innerText='Total ₹'+total;
 }
 
-function toggleCart(){
-document.getElementById('cart').classList.toggle('active');
-}
-
-function toggleMode(){
-document.body.classList.toggle('light');
-}
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
-});
-
-document.querySelectorAll('.card, .gallery img').forEach(el=>observer.observe(el));
+function toggleCart(){document.getElementById('cart').classList.toggle('active');}
+function toggleMode(){document.body.classList.toggle('light');}
 
 window.watsonAssistantChatOptions={
 integrationID:"ab98eaf7-51c7-47d8-a18e-fd527707e70c",
